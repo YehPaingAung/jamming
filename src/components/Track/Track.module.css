@@ -1,0 +1,19 @@
+.trackContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.txtContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.txtContainer h4 {
+  font-size: 25px;
+}
+.txtContainer p {
+  font-size: 15px;
+  color: var(--text-black-700);
+}

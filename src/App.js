@@ -1,7 +1,14 @@
+import React from "react";
 import "./App.css";
 
-function App() {
-  return <div className="App"></div>;
-}
+import { SearchBar } from "./components/SearchBar/SearchBar";
+import { SearchBarResults } from "./components/SearchBarResults/SearchBarResults";
 
-export default App;
+export const App = () => {
+  return (
+    <div className="App container">
+      <SearchBar />
+      <SearchBarResults />
+    </div>
+  );
+};
