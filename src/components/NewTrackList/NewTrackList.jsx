@@ -16,7 +16,9 @@ export const NewTrackList = ({
   const handleClick = (e) => {
     e.preventDefault();
     if (!playListName) return;
+    if (!trackList.length) return;
     onPlayList();
+    setPlayListName(e.target.value);
     setPlayListName("");
   };
   return (

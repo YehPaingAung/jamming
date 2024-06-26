@@ -89,7 +89,7 @@ const playListInitialState = {
       album: "Storm",
     },
   ],
-  hihi: [
+  relax: [
     {
       id: 3241,
       name: "Quas",
@@ -161,9 +161,11 @@ export const SearchBarResults = () => {
   };
 
   const handlePlayList = () => {
-    setPlayList({ ...playList, playListName: newTrackList });
-    setNewTrackList([]);
+    let newPlayList = { playListName: newTrackList };
+    console.log(newPlayList);
+    setPlayList({ ...playList, newPlayList });
     console.log(playList);
+    setNewTrackList([]);
   };
 
   return (
