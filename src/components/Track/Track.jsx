@@ -1,28 +1,23 @@
 import React from "react";
+import { RemoveButton } from "../RemoveButton";
+import { AddButton } from "../AddButton";
 import styles from "./Track.module.css";
 
-export const Track = ({ track, onAddTrack }) => {
-  const handleClick = () => {
-    if (!track) return;
-    onAddTrack(track);
-  };
+export const Track = ({ track, isRemovable, onAddTrack, onRemoveTrack }) => {
   return (
-    <div>
+    <div className={styles.track}>
       <div>
-        <div className={styles.trackContainer}>
-          <div className={styles.txtContainer}>
-            <h4>{track.name}</h4>
-            <p>
-              {track.author} | {track.album}
-            </p>
-          </div>
-          <div className={styles.btnContainer}>
-            <button className={styles.btn} onClick={handleClick}>
-              <i className="fa-solid fa-plus plus-icon"></i>
-            </button>
-          </div>
-        </div>
-        <hr />
+        <h4>{track.name}</h4>
+        <p>
+          {track.artist} | {track.album}
+        </p>
+      </div>
+      <div>
+        {isRemovable ? (
+          <RemoveButton onRemoveTrack={onRemoveTrack} track={track} />
+        ) : (
+          <AddButton onAddTrack={onAddTrack} track={track} />
+        )}
       </div>
     </div>
   );

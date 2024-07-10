@@ -1,29 +1,24 @@
-import React, { useState } from "react";
-import styles from "./SearchBar.module.css";
+import React, { useCallback, useState } from "react";
 
-export const SearchBar = () => {
-  const [searchData, setSearchData] = useState("");
+export const SearchBar = ({ onSearch }) => {
+  const [term, setTerm] = useState("");
 
-  const handleSearchChange = (e) => {
-    setSearchData(e.target.value);
-  };
+  const handleTermChange = useCallback((event) => {
+    setTerm(event.target.value);
+  }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSearchData(e.target.value);
-    setSearchData("");
-  };
+  const search = useCallback(() => {
+    onSearch(term);
+  }, [onSearch, term]);
+
   return (
-    <form className={styles.container} onSubmit={handleSubmit}>
+    <div>
       <input
-        className={styles.input}
+        placeholder="Enter A Song Title"
         type="text"
-        onChange={handleSearchChange}
-        value={searchData}
+        onChange={handleTermChange}
       />
-      <button type="submit">
-        <i className="fa-solid fa-magnifying-glass search-icon"></i>
-      </button>
-    </form>
+      <button onClick={search}>SearchButton</button>
+    </div>
   );
 };

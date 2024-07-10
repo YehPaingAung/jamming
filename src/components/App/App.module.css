@@ -1,0 +1,12 @@
+.listContainer {
+  display: flex;
+  gap: 100px;
+}
+
+.searchBarResults {
+  flex: 2;
+}
+
+.playList {
+  flex: 1;
+}
