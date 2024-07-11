@@ -1,14 +1,12 @@
 import React from "react";
 import { TrackList } from "../TrackList/TrackList";
 
-export const SearchBarResults = ({ trackList, isRemovable, onAddTrack }) => {
+export const SearchBarResults = ({ trackList, onAddTrack }) => {
   return (
-    <div>
-      <TrackList
-        trackList={trackList}
-        isRemovable={false}
-        onAddTrack={onAddTrack}
-      />
-    </div>
+    <TrackList
+      trackList={trackList}
+      isRemovable={false}
+      onAddTrack={onAddTrack}
+    />
   );
 };

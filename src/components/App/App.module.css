@@ -1,12 +1,52 @@
-.listContainer {
+.app {
   display: flex;
-  gap: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 30px;
 }
 
-.searchBarResults {
-  flex: 2;
+.title {
+  font-size: 80px;
+}
+.title i {
+  color: green;
 }
 
-.playList {
-  flex: 1;
+.showcase {
+  display: flex;
+  width: 100%;
+  gap: 70px;
+  justify-content: center;
+}
+
+.leftBox {
+  min-width: 50%;
+  max-width: 60%;
+  min-height: 80vh;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 30px 30px;
+  line-height: 30px;
+}
+
+.leftBox h2,
+.rightBox h2 {
+  font-size: 40px;
+  text-wrap: wrap;
+  color: gray;
+  text-align: center;
+  line-height: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rightBox {
+  min-width: 40%;
+  max-width: 40%;
+  border-radius: 30px;
+  /* border: 1px solid #ccc; */
+  padding: 30px 30px;
+  line-height: 30px;
 }

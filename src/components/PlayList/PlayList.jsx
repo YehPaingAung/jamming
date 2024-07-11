@@ -1,26 +1,23 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { TrackList } from "../TrackList/TrackList";
+import styles from "./PlayList.module.css";
 
 export const Playlist = ({
   trackList,
   onRemoveTrack,
-  setPlayListName,
-  playListName,
-  onAddPlayList,
-  playList,
+  onNameChange,
+  onSavePlayList,
 }) => {
-  const handleChange = (e) => {
-    setPlayListName(e.target.value);
-  };
-  const handleClick = () => {
-    if (!playListName || !playList.length) return;
-    const newPlayList = { name: playListName, tracks: playList };
-    onAddPlayList(newPlayList);
-    console.log(newPlayList);
-  };
+  const handleChange = useCallback(
+    (e) => {
+      onNameChange(e.target.value);
+    },
+    [onNameChange]
+  );
   return (
-    <div>
+    <div className={styles.playlist}>
       <input
+        className={styles.playlistInput}
         type="text"
         onChange={handleChange}
         defaultValue={"New Playlist"}
@@ -30,7 +27,9 @@ export const Playlist = ({
         isRemovable={true}
         onRemoveTrack={onRemoveTrack}
       />
-      <button onClick={handleClick}>SAVE TO SPOTIFY</button>
+      <button className={styles.saveBtn} onClick={onSavePlayList}>
+        SAVE TO SPOTIFY
+      </button>
     </div>
   );
 };

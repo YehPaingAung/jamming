@@ -1,4 +1,5 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import styles from "./SearchBar.module.css";
 
 export const SearchBar = ({ onSearch }) => {
   const [term, setTerm] = useState("");
@@ -11,14 +12,21 @@ export const SearchBar = ({ onSearch }) => {
     onSearch(term);
   }, [onSearch, term]);
 
+  useEffect(() => {
+    onSearch(term);
+  }, [onSearch, term]);
+
   return (
     <div>
+      <button onClick={search} className={styles.searchIcon} disabled>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
       <input
+        className={styles.searchBox}
         placeholder="Enter A Song Title"
         type="text"
         onChange={handleTermChange}
       />
-      <button onClick={search}>SearchButton</button>
     </div>
   );
 };

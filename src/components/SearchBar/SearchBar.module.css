@@ -1,0 +1,26 @@
+.searchBox {
+  padding: 20px 200px;
+  border-radius: 70px;
+  padding-left: 80px;
+  font-size: 30px;
+  cursor: auto;
+}
+
+.searchBox:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.searchBox:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.searchIcon {
+  outline: none;
+  border: none;
+  position: relative;
+  left: 60px;
+  font-size: 30px;
+  color: black;
+}
